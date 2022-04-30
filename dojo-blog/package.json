@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development",
+    "dev:start-server": "wasmedge --dir .:. /home/ubuntu/wasmedge-quickjs/target/wasm32-wasi/release/wasmedge_quickjs.wasm ./server-build/index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
