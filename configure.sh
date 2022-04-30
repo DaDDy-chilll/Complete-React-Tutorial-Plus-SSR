@@ -3,7 +3,8 @@
 # This script will allow the SSR modifications to be performed quickly; used for debugging i.e. trying different branches etc.
 # cd ~/Complete-React-Tutorial-Plus-SSR
 # git checkout lesson-xx
-# create file called configure.sh and populate with the contents of this file
+# fetch this file
+# curl "https://raw.githubusercontent.com/second-state/Complete-React-Tutorial-Plus-SSR/lesson-32/configure.sh" -o configure.sh
 # Make the file executable
 # sudo chmod a+x configure.sh
 # Run the file
@@ -26,9 +27,15 @@ URL5="https://raw.githubusercontent.com/second-state/Complete-React-Tutorial-Plu
 curl $URL5 -o dojo-blog/package.json
 
 cd dojo-blog
+rm -rf node_modules
+rm package-lock.json
+npm i g webpack@4.44.2
+npm i g webpack-cli
+npm i g react-scripts
 npm install
 npm run build
 npx browserslist@latest --update-db
 npm run dev:build-server
 npm run dev:start-server
 
+# Visit the app at port 8002
