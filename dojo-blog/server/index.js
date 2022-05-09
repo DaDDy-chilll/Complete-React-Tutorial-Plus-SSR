@@ -42,7 +42,7 @@ async function handle_req(s, req) {
   let content = '';
   if (req.uri == '/') {
     const app = ReactDOMServer.renderToString(<App />);
-    content = std.loadFile('./build/index.html');
+    content = std.loadFile('./public/index.html');
     content = content.replace('<div id="root"></div>', `<div id="root">${app}</div>`);
   } else {
     let chunk = 1000; // Chunk size of each reading
