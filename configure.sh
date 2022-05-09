@@ -26,11 +26,12 @@ curl $URL4 -o dojo-blog/webpack.server.js
 URL5="https://raw.githubusercontent.com/second-state/Complete-React-Tutorial-Plus-SSR/lesson-32/dojo-blog/package.json"
 curl $URL5 -o dojo-blog/package.json
 
+URL6="https://raw.githubusercontent.com/second-state/Complete-React-Tutorial-Plus-SSR/lesson-32/dojo-blog/rollup.config.js"
+curl $URL6 -o dojo-blog/rollup.config.js
+
 cd dojo-blog
 rm -rf node_modules
 rm package-lock.json
-npm i g webpack@4.44.2
-npm i g webpack-cli
 npm i g react-scripts
 npm install
 npm run build
